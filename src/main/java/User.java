@@ -5,23 +5,18 @@ public class User {
     private String email;
 
     public User(String login, String email) {
-        if (login.isEmpty() || login.isBlank()) {
+        if (login.isBlank()) {
             System.out.println(("Cтрока не может быть пустой"));
         } else if (login.equals(email)) {
             throw new RuntimeException("Логин и e-amil одинаковы!");
         } else {
             this.login = login;
         }
-        if (email.isEmpty() || email.isBlank()) {
+        if (email.isBlank()) {
             throw new NullPointerException("Cтрока не может быть пустой");
         } else if (email.contains("@") && email.contains(".")) {
             this.email = email;
         } else throw new RuntimeException("ВВедите верный e-mail");
-    }
-
-    public User() {
-        System.out.println("введите значения");
-
     }
 
     public String getLogin() {
