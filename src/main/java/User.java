@@ -4,6 +4,9 @@ public class User {
     private String login;
     private String email;
 
+
+    private String name;
+
     public User(String login, String email) {
         if (login.isBlank()) {
             System.out.println(("Cтрока не может быть пустой"));
@@ -17,6 +20,18 @@ public class User {
         } else if (email.contains("@") && email.contains(".")) {
             this.email = email;
         } else throw new RuntimeException("ВВедите верный e-mail");
+    }
+
+    public User(String name) {
+        if (name.isBlank()) {
+            System.out.println(("Cтрока не может быть пустой"));
+        } else {
+            this.name = name;
+        }
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getLogin() {
